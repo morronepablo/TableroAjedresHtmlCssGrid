@@ -39,3 +39,23 @@
 img {
     width: 100%;
 }
+
+.circle {
+    width: 30%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.105);
+    border-radius: 50%;
+}
+
+/* center childs */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pawnCompo {
+    /* background-color: ; */
+    width: 70px;
+    height: 70px;
+}

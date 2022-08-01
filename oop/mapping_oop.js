@@ -18,8 +18,12 @@ class Square {
 }
 
 for (let i = 8; i > 0; i--) {
+    const isRowEven = i % 2 == 0 ? true : false;
     const rowArray = [];
     for (let j = 97; j < 105; j++) {
+
+        const isElementEven = j % 2 == 0 ? true : false;
+
         const fileName = String.fromCharCode(j);
         const id = fileName + i;
 
@@ -31,11 +35,21 @@ for (let i = 8; i > 0; i--) {
 
         // Color
         // odd row => odd event (769656)
+        if(!isRowEven && !isElementEven) {
+            square.color = 'dark';
+        }
         // even row => odd event (EEEED2)
+        if(isRowEven && !isElementEven) {
+            square.color = 'light';
+        }
         // odd row => even event 
-        // even row => odd event (EEEED2)
+        if(!isRowEven && isElementEven) {
+            square.color = 'light';
+        }
         // even row => even event (769656)
-
+        if(isRowEven && isElementEven) {
+            square.color = 'dark';
+        }
 
         // push array
         rowArray.push(square);
@@ -43,4 +57,5 @@ for (let i = 8; i > 0; i--) {
     mainMap.push(rowArray);
 }
 
-console.log(mainMap);
+import * as silicon from './renderHtml.js';
+silicon.renderUI(mainMap);

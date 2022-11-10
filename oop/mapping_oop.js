@@ -9,12 +9,14 @@
 // Property -> 2 id (string)
 
 const mainMap = [];
+
+// each square
 class Square {
-    color;
-    isHighlighted;
-    isHint;
-    isPiece;
-    id;
+    color; // only 2 colors
+    isHighlighted; // heghlighted with yellow color or not 
+    isHint; // small circle in middle square
+    isPiece; // if exists a piece then we wil return location for image otherwise we wil return false
+    id; // unique id to recognize the square
 }
 
 for (let i = 8; i > 0; i--) {
